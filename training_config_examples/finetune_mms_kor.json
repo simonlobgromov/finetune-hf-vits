@@ -1,25 +1,25 @@
 {
-    "project_name": "mms_korean-finetuning",
+    "project_name": "my_converted_models",
     "push_to_hub": true,
-    "hub_model_id": "ylacombe/mms-tts-kor-finetuned",
+    "hub_model_id": "ylacombe/mms-tts-kir-finetuned",
     "report_to": ["wandb"],
     "overwrite_output_dir": true,
-    "output_dir": "./tmp/vits_finetuned_kor",
+    "output_dir": "./tmp/vits_finetuned_kir",
 
-    "dataset_name": "PolyAI/minds14",    
-    "dataset_config_name": "ko-KR", 
+    "dataset_name": "google/fleurs",    
+    "dataset_config_name": "ky_kg", 
     "audio_column_name": "audio", 
     "text_column_name":"transcription",
     "train_split_name": "train",
     "eval_split_name": "train",
 
-    "full_generation_sample_text": "그는 괜찮은 척하려고 애쓰는 것 같았다.",
+    
     
     "max_duration_in_seconds": 20,
     "min_duration_in_seconds": 1.0,
     "max_tokens_length": 500,
 
-    "model_name_or_path": "ylacombe/mms-tts-kor-train",
+    "model_name_or_path": "ylacombe/mms-tts-kir-train",
 
 
     "preprocessing_num_workers": 4,
