@@ -54,5 +54,5 @@
     "fp16": true,
     "seed": 456,
 
-    "uroman_path": "/home/yoach/uroman"
+    "uroman_path": "/content/finetune-hf-vits/uroman"
 }
