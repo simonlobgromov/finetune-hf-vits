@@ -1560,7 +1560,7 @@ class VitsTextEncoder(nn.Module):
         output_hidden_states: Optional[bool] = None,
         return_dict: Optional[bool] = True,
     ) -> Union[Tuple[torch.Tensor], VitsTextEncoderOutput]:
-        hidden_states = self.embed_tokens(input_ids) * math.sqrt(self.config.hidden_size)
+        hidden_states = self.embed_tokens(input_ids.long()) * math.sqrt(self.config.hidden_size)
 
         encoder_outputs = self.encoder(
             hidden_states=hidden_states,
