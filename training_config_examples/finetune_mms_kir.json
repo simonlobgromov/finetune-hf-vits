@@ -11,7 +11,8 @@
     "audio_column_name": "audio", 
     "text_column_name":"transcription",
     "train_split_name": "train",
-    "eval_split_name": "train",
+    "eval_split_name": "validation",
+    "gender" : 1
 
     "full_generation_sample_text": "Бир жерден ката кетти окшойт.",
 
@@ -28,7 +29,7 @@
 
     "do_train": true,
     "num_train_epochs": 100,
-    "max_train_samples": 150,
+    "max_train_samples": 1000,
     "gradient_accumulation_steps": 1,
     "gradient_checkpointing": false,
     "per_device_train_batch_size": 16,
