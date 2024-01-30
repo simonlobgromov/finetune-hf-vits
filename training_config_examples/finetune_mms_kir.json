@@ -12,6 +12,7 @@
     "text_column_name":"transcription",
     "train_split_name": "train",
     "eval_split_name": "validation",
+    "dataset_gender" : 1,
 
     "full_generation_sample_text": "Бир жерден ката кетти окшойт.",
 
