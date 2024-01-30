@@ -53,7 +53,5 @@
     "weight_mel": 35,
 
     "fp16": true,
-    "seed": 456,
-
-    "uroman_path": "/content/finetune-hf-vits/uroman"
+    "seed": 456
 }
