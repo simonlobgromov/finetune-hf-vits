@@ -592,6 +592,10 @@ def main():
     # 4. Load dataset
     raw_datasets = DatasetDict()
 
+    dataset_gender = data_args.dataset_gender
+    gender_filter = lambda example: example["gender"] == dataset_gender
+
+
     if training_args.do_train:
         raw_datasets["train"] = load_dataset(
             data_args.dataset_name,
@@ -599,8 +603,9 @@ def main():
             split=data_args.train_split_name,
             cache_dir=model_args.cache_dir,
             token=model_args.token,
-            filter=lambda example: example["gender"] == dataset_gender,
         )
+
+        raw_datasets["train"] = raw_datasets["train"].filter(gender_filter)
 
     if training_args.do_eval:
         raw_datasets["eval"] = load_dataset(
@@ -609,8 +614,8 @@ def main():
             split=data_args.eval_split_name,
             cache_dir=model_args.cache_dir,
             token=model_args.token,
-            filter=lambda example: example["gender"] == dataset_gender,
         )
+        raw_datasets["eval"] = raw_datasets["eval"].filter(gender_filter)
 
     if data_args.audio_column_name not in next(iter(raw_datasets.values())).column_names:
         raise ValueError(
