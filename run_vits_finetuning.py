@@ -167,6 +167,12 @@ class DataTrainingArguments:
     dataset_config_name: Optional[str] = field(
         default=None, metadata={"help": "The configuration name of the dataset to use (via the datasets library)."}
     )
+
+    dataset_gender: Optional[int] = field(
+        default=None, metadata={"help": "The gender configuration by choice. 0-man, 1-woman(via the datasets library)."}
+    )
+
+
     overwrite_cache: bool = field(
         default=False, metadata={"help": "Overwrite the cached training and evaluation sets"}
     )
@@ -593,6 +599,7 @@ def main():
             split=data_args.train_split_name,
             cache_dir=model_args.cache_dir,
             token=model_args.token,
+            filter=lambda example: example["gender"] == dataset_gender,
         )
 
     if training_args.do_eval:
@@ -602,6 +609,7 @@ def main():
             split=data_args.eval_split_name,
             cache_dir=model_args.cache_dir,
             token=model_args.token,
+            filter=lambda example: example["gender"] == dataset_gender,
         )
 
     if data_args.audio_column_name not in next(iter(raw_datasets.values())).column_names:
