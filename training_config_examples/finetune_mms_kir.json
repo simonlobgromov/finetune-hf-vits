@@ -6,12 +6,11 @@
     "overwrite_output_dir": true,
     "output_dir": "./tmp/vits_finetuned_kir",
 
-    "dataset_name": "google/fleurs",    
-    "dataset_config_name": "ky_kg", 
+    "dataset_name": "Simonlob/Kany_dataset_1",
     "audio_column_name": "audio", 
     "text_column_name":"transcription",
     "train_split_name": "train",
-    "eval_split_name": "validation",
+    "eval_split_name": "test",
     "dataset_gender" : 1,
 
     "full_generation_sample_text": "Бир жерден ката кетти окшойт.",
@@ -29,11 +28,11 @@
 
     "do_train": true,
     "num_train_epochs": 100,
-    "max_train_samples": 500,
+    "max_train_samples": 700,
     "gradient_accumulation_steps": 1,
     "gradient_checkpointing": false,
     "per_device_train_batch_size": 16,
-    "learning_rate": 2e-5,
+    "learning_rate": 2e-6,
     "adam_beta1": 0.8,
     "adam_beta2": 0.99,
     "warmup_ratio": 0.01,
@@ -42,7 +41,7 @@
     "do_eval": true, 
     "eval_steps": 50,
     "per_device_eval_batch_size": 16,
-    "max_eval_samples": 25, 
+    "max_eval_samples": 50, 
     "do_step_schedule_per_epoch": true,
 
     "weight_disc": 3,
