@@ -6,7 +6,7 @@
     "overwrite_output_dir": true,
     "output_dir": "./tmp/vits_finetuned_kir",
 
-    "dataset_name": "Simonlob/Kany_dataset_1",
+    "dataset_name": "Simonlob/Kany_dataset_mk4",
     "audio_column_name": "audio", 
     "text_column_name":"transcription",
     "train_split_name": "train",
@@ -18,8 +18,8 @@
     
     
     "max_duration_in_seconds": 20,
-    "min_duration_in_seconds": 1.0,
-    "max_tokens_length": 500,
+    "min_duration_in_seconds": 0.1,
+    "max_tokens_length": 1500,
 
     "model_name_or_path": "Simonlob/simonlob_akylay",
 
@@ -27,8 +27,8 @@
     "preprocessing_num_workers": 4,
 
     "do_train": true,
-    "num_train_epochs": 100,
-    "max_train_samples": 700,
+    "num_train_epochs": 180,
+    "max_train_samples": 720,
     "gradient_accumulation_steps": 1,
     "gradient_checkpointing": false,
     "per_device_train_batch_size": 16,
@@ -41,7 +41,7 @@
     "do_eval": true, 
     "eval_steps": 50,
     "per_device_eval_batch_size": 16,
-    "max_eval_samples": 50, 
+    "max_eval_samples": 30, 
     "do_step_schedule_per_epoch": true,
 
     "weight_disc": 3,
