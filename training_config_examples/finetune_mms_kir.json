@@ -1,7 +1,7 @@
 {
     "project_name": "my_converted_models",
     "push_to_hub": true,
-    "hub_model_id": "Simonlob/simonlob_akylay",
+    "hub_model_id": "Simonlob/TTS_Akyl-AI_alpha",
     "report_to": ["wandb"],
     "overwrite_output_dir": true,
     "output_dir": "./tmp/vits_finetuned_kir",
@@ -13,7 +13,7 @@
     "eval_split_name": "test",
     "dataset_gender" : 1,
 
-    "full_generation_sample_text": "Бир жерден ката кетти окшойт.",
+    "full_generation_sample_text": "кандай улут болбосун кыргызча жооп кайтарышыбыз керек.",
 
     
     
@@ -21,17 +21,17 @@
     "min_duration_in_seconds": 0.1,
     "max_tokens_length": 1500,
 
-    "model_name_or_path": "Simonlob/simonlob_akylay",
+    "model_name_or_path": "Simonlob/TTS_Akyl-AI_alpha",
 
 
     "preprocessing_num_workers": 4,
 
     "do_train": true,
     "num_train_epochs": 180,
-    "max_train_samples": 720,
+    "max_train_samples": 4972,
     "gradient_accumulation_steps": 1,
     "gradient_checkpointing": false,
-    "per_device_train_batch_size": 16,
+    "per_device_train_batch_size": 32,
     "learning_rate": 2e-6,
     "adam_beta1": 0.8,
     "adam_beta2": 0.99,
